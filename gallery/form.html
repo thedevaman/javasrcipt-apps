@@ -12,39 +12,88 @@
     </script>
     <style>
         body{
-            background: #f5f5f5;;
+            background: #ddd;;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
         }
-        #card{
-            width: 150px;
-            height: 150px;
-            background: #fff;
-            border-radius: 24px;
-            box-shadow: 0 8px 16px 0px rgba(0,0,0,0.2);
-        }
+        
         #page{
-            height: 100vh;
+            height:500px;
+            width: 70%;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            background: white;
+            margin: 48px auto;
+            border-radius: 8px;
+            display: flex;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         }
-        #color-input{
-            width: 100%;
-            height: 100%;
+
+        #form-box,#card
+        {
+            width: 50%;
+            padding: 24px;
         }
         #title{
-            font-size: 60px;
-            font-family:sans-serif
+            font-family: sans-serif;
         }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        input{
+            border: 1px solid #ccc;
+            padding: 16px 34px;
+            border-radius: 4px;
+        }
+        #create-button
+        {
+            background-color: crimson;
+            color: white;
+            padding: 16px;
+            width: fit-content;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+
+        }
+
+        #card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #card h1, #card p{
+            font-family: sans-serif;
+        }
+
+        #person-mail {
+            padding: 0px;
+            margin: 0px;
+        }
+       
     </style>
    
 </head>
 <body>
    <div id="page">
-    <h1 id="title">Data</h1>
-       <div id = "card">
-        <input type="color" onchange="changeColour(this)" id="color-input"/>
+       <div id="form-box">
+        <h1 id="title">ID maker</h1>
+        <form>
+            <input placeholder="fullname" />
+            <input placeholder="E-mail" />
+            <input placeholder="Role" />
+            <button id="create-button">Create</button>
+        </form>
        </div>
+       <div id="card">
+        <img id="pic" src="https://tse1.mm.bing.net/th/id/OIP.b5DScOSff8sk1Q98E4Rc5QHaHa?pid=Api&h=220&P=0" width="150" alt="">
+       <h1 id="person-name">Aman</h1>
+       <p id="person-mail">aman@gmail.com</p>
+       <p id="person-role">Developer</p>
+    </div>
    </div>
 </body>
 </html>
