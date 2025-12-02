@@ -9,6 +9,12 @@
            const selectedsrc = e.src
            document.getElementById('result').src = selectedsrc
         }
+
+        const setCss = (css,prop)=>{
+           const div = document.getElementById('result2')
+           div.style[css] = prop
+        }
+       
     </script>
     <style>
         body{
@@ -41,6 +47,12 @@
         transform: scale(1.2);
         transition: 0.3s;
         }
+        #result2{
+            width: 300px;
+            height: 300px;
+            background: #fff;
+            margin-bottom: 24px;
+        }
     </style>
 </head>
 <body>
@@ -53,6 +65,13 @@
             <img src="images/image3.jpeg" alt="" onclick="preview(this)">
             <img src="images/image4.jpeg" alt="" onclick="preview(this)">
         </div>
+    </div>
+    <hr>
+    <div id="page2">
+       <div id="result2"></div>
+       <button onclick="setCss('backgroundColor','red')">Add Background</button>
+       <button onclick="setCss('border','2px solid black')">Add Border</button>
+       <button onclick="setCss('border-radius','20px')">Add Radius</button>
     </div>
     
 </body>
