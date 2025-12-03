@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            background: #f5f5f5;
+        }
+        #page{
+            width: 60%;
+            margin: 32px auto;
+            background: rgb(10, 224, 10);
+            border-radius: 8px;
+            padding: 24px;
+        }
+        #title{
+        font-family: sans-serif;
+        color: #fff;
+        text-align: center;
+        font-size: 60px;
+        }
+
+        form{
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        input{
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            width: 75%;
+        }
+        button{
+            background: black;
+            border: none;
+            padding: 12px;
+            flex-grow: 1;
+            border-radius: 4px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        function download(e)
+        {
+         e.preventDefault()
+        const url =  document.getElementById('url').value
+         const a = document.createElement('a')
+         a.href = url
+         a.download = "demo.jpg"
+         a.click()
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Index</a>
+ <a href="login.html">login form</a>
+ <a href="download_manager.html">Download Manager</a>
+    <div id="page">
+        <h1 id="title">Download Manager</h1>
+        <form onsubmit="download(event)">
+            <input type="url" required placeholder="copy your url!" name="url" id="url"/>
+            <button>Download</button>
+        </form>
+    </div>
+</body>
+</html>

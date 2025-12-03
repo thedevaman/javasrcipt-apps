@@ -5,10 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        const changeColour = (input)=>{
-       const title = document.getElementById('title')
-       title.style.color = input.value
-        }
+      const createId = (e) =>{
+       e.preventDefault()
+
+        const fullname = document.getElementById('fullname').value
+        const email = document.getElementById('email').value
+        const role = document.getElementById('role').value
+
+       
+        document.getElementById('person-name').innerHTML = fullname
+        document.getElementById('person-mail').innerHTML = email
+        document.getElementById('person-role').innerHTML = role
+
+        document.getElementById('fullname').value =''
+        document.getElementById('email').value =''
+        document.getElementById('role').value =''
+
+      }
+
     </script>
     <style>
         body{
@@ -78,13 +92,18 @@
    
 </head>
 <body>
+
+     <a href="index.html">Home</a>
+     <a href="login.html">login form</a>
+
    <div id="page">
+   
        <div id="form-box">
         <h1 id="title">ID maker</h1>
-        <form>
-            <input placeholder="fullname" />
-            <input placeholder="E-mail" />
-            <input placeholder="Role" />
+        <form onsubmit="createId(event)">
+            <input placeholder="fullname" id="fullname" />
+            <input placeholder="E-mail" id="email"/>
+            <input placeholder="Role" id="role" />
             <button id="create-button">Create</button>
         </form>
        </div>
@@ -97,3 +116,4 @@
    </div>
 </body>
 </html>
+
