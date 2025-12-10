@@ -1,0 +1,5 @@
+localStorage.setItem('name','Aman') => used to store data in localStorage
+localStorage.getItem('name') => used to get data
+localStorage.removeItem('name') => used to remove data
+localStorage.clear() => used to clear localStorage
+localStorage.key(0)=> get the name of key at that indexing
