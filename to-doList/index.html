@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.4/dist/sweetalert2.all.min.js"></script>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+    rel="stylesheet"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+   <img src="images/todo.jpg" class="lg:w-6/12 w-full lg:h-auto h-[0px] lg:fixed top-0 left-0 object-cover"/>
+    <div class="w-6/12 lg:ml-[50%] lg:p-12 p-8 space-y-8">
+    <div class="flex items-center justify-center gap-2">
+     <i class="ri-edit-circle-fill text-5xl text-indigo-600 mt-1"></i>
+     <h1 class="text-4xl font-bold">Task<span class="text-indigo-600">pur</span></h1>
+     </div>
+     <div class="flex lg:flex-row flex-col gap-6 lg:items-center">
+        <input class="flex-1 p-2 border border-gray-300 rounded" placeholder="Search" type="text">
+        <button class="bg-indigo-400 px-8 py-2 font-medium text-white hover:bg-indigo-600 rounded" onclick="openDialog()"><i class="ri-add-large-fill"></i> New Task</button>
+     </div>
+     <table class="w-full">
+        <tr class="bg-indigo-300 text-left">
+            <th class="p-3">Sr. No.</th>
+            <th class="p-3">Task</th>
+            <th class="p-3">Actions</th>
+        </tr>
+        <tr class="border-b border-gray-200 ">
+            <td class="p-3.5">1</td>
+            <td class="p-3 text-gray-600">Complete JS</td>
+            <td class="p-3">
+                <div class="flex items-center gap-3">
+                    <button class="bg-green-500 w-8 h-8 rounded-full flex items-center justify-center text-white hover:bg-green-700"><i class="ri-pencil-fill"></i></button>
+                    <button class="bg-rose-500 w-8 h-8 rounded-full flex items-center justify-center text-white hover:bg-rose-700"><i class="ri-delete-bin-line"></i></button>
+                
+                </div>
+            </td>
+        </tr>
+     </table>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
