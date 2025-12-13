@@ -1,3 +1,7 @@
+window.onload = ()=>{
+  fetchTasks()
+}
+
 function openDialog()
 {
      new Swal({
@@ -15,5 +19,22 @@ function openDialog()
 function storetask(event)
 {
   event.preventDefault()
-  alert()
+  const taskInput = document.getElementById("task")
+  const task = taskInput.value.trim()
+  const key = Date.now()
+  localStorage.setItem(key,task)
+  new Swal({
+    icon:"success",
+    title:"Task Created"
+  })
+}
+
+const fetchTasks = ()=>{
+//const allDataLength = localStorage.length  //data count in localstorage
+const keys = Object.keys(localStorage)
+for(var key of keys){
+  const task = localStorage.getItem(key)
+console.log(task)
+}
+// console.log(keys)
 }
