@@ -127,3 +127,53 @@ const updateStatus = (event,key) =>{
     text : status.toUpperCase()
   })
 }
+
+
+const serachData = (input) =>{
+const keyword = input.value.trim().toLowerCase() 
+const keys = Object.keys(localStorage)
+const allData = []
+for(var key of keys)
+{
+  const data = JSON.parse(localStorage.getItem(key))
+  allData.push(data)
+
+}
+
+const filtered = allData.filter((item)=>{
+ return item.task.toLowerCase().indexOf(keyword) != -1
+})
+
+
+const tableBody = document.getElementById("table_body")
+var i = 1
+   tableBody.innerHTML = " "  
+for(var filteredKey of filtered){
+  
+  const ui = `
+   <tr class="border-b border-gray-200 ">
+            <td class="p-3.5">${i}</td>
+            <td class="p-3 text-gray-600">${filteredKey.task[0].toUpperCase()}${filteredKey.task.slice(1)}</td>
+            <td class="p-3 text-gray-600">${moment(filteredKey.date).format('DD MMM YYYY')}</td>
+            <td class="p-3 text-gray-600">
+            <select class="border border-grya-300 rounded p-1" onchange="updateStatus(event,${filteredKey})">
+              <option value="scheduled" ${filteredKey.status === 'scheduled'?'selected':''}>Scheduled</option>
+              <option value="inprogress" ${filteredKey.status === 'inprogress'?'selected':''}>InProgress</option>
+              <option value="cancelled" ${filteredKey.status === 'cancelled'?'selected':''}>Cancelled</option>
+              <option value="completed" ${filteredKey.status === 'completed'?'selected':''}>Completed</option>
+            </select>
+            </td>
+            <td class="p-3">
+                <div class="flex items-center gap-3">
+                    <button class="bg-green-500 w-8 h-8 rounded-full flex items-center justify-center text-white hover:bg-green-700" onclick="openEditModal('${filteredKey.task}','${filteredKey}','${filteredKey.date}')"><i class="ri-pencil-fill"></i></button>
+                    <button class="bg-rose-500 w-8 h-8 rounded-full flex items-center justify-center text-white hover:bg-rose-700" onclick="deletetask('${filteredKey}')"><i class="ri-delete-bin-line"></i></button>
+                </div>
+            </td>
+        </tr>`
+      tableBody.innerHTML += ui  
+ i = i+1
+}
+
+
+
+}
