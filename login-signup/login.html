@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="grid lg:grid-cols-2 w-10/12 mx-auto lg:gap-16">
+        <img src="images/login.png" alt="login" class="w-full my-auto"/>
+        <div class="lg:py-16 py-8">
+            <h1 class="text-5xl font-bold lg:text-left text-center">Login</h1>
+            <form class="mt-16 space-y-8">
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-600 font-medium text-lg">E-mail Id</label>
+                    <input name="email" class="border border-gray-300 px-3 py-2.5" placeholder="example@email.com"/>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-600 font-medium text-lg">Password</label>
+                    <input name="password" type="password" class="border border-gray-300 px-3 py-2.5" placeholder="**********"/>
+                </div>
+
+                <button class="bg-indigo-500 py-2.5 px-8 rounded text-white hover:bg-indigo-600">Login</button>
+            </form>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>
