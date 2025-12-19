@@ -14,17 +14,25 @@
             <form class="mt-16 space-y-8" onsubmit="createuser(event)">
                 <div class="flex flex-col gap-2">
                     <label class="text-gray-600 font-medium text-lg">Fullname</label>
-                    <input onblur="validation('fullname','fullname-error')" id="fullname" name="fullname" class="border border-gray-300 px-3 py-2.5" placeholder="what is your name!"/>
+                    <input onblur="validation('fullname','fullname-error')"
+                    oninput="validation('fullname','fullname-error')"
+                    id="fullname" name="fullname" class="border border-gray-300 px-3 py-2.5" placeholder="what is your name!"/>
                     <small id="fullname-error" class="text-rose-500 font-medium hidden">Msg</small>
                 </div>
                 <div class="flex flex-col gap-2">
                     <label class="text-gray-600 font-medium text-lg">E-mail Id</label>
-                    <input onblur="validation('email','email-error')" id="email" name="email" class="border border-gray-300 px-3 py-2.5" placeholder="example@email.com"/>
+                    <input 
+                    onblur="validation('email','email-error')"
+                    oninput="validation('email','email-error')"                   
+                    id="email" name="email" class="border border-gray-300 px-3 py-2.5" placeholder="example@email.com"/>
                     <small id="email-error" class="text-rose-500 font-medium hidden">Msg</small>
                  </div>
                 <div class="flex flex-col gap-2">
                     <label class="text-gray-600 font-medium text-lg">Password</label>
-                    <input onblur="validation('password','password-error')" id="password" name="password" type="password" class="border border-gray-300 px-3 py-2.5" placeholder="**********"/>
+                    <input 
+                    onblur="validation('password','password-error')" 
+                    oninput="validation('password','password-error')" 
+                    id="password" name="password" type="password" class="border border-gray-300 px-3 py-2.5" placeholder="**********"/>
                     <small id="password-error" class="text-rose-500 font-medium hidden">Msg</small>
                 </div>
 
