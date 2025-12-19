@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+     <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
 </head>
 <body>
     <div class="grid lg:grid-cols-2 w-10/12 mx-auto lg:gap-16">
@@ -29,10 +34,16 @@
                  </div>
                 <div class="flex flex-col gap-2">
                     <label class="text-gray-600 font-medium text-lg">Password</label>
+                    <div class="border border-gray-300 px-3 py-1.5 flex">
                     <input 
                     onblur="validation('password','password-error')" 
                     oninput="validation('password','password-error')" 
-                    id="password" name="password" type="password" class="border border-gray-300 px-3 py-2.5" placeholder="**********"/>
+                    id="password" name="password" type="password" class="flex-1 focus:outline-none" placeholder="**********"/>
+                    <button onclick="togglePassword()" type="button" class="w-8 h-8 bg-gray-200 rounded-full hover:bg-gray-300">
+                    <i class="ri-eye-line" id="password-icon"></i>  
+                    </button>
+
+                </div>
                     <small id="password-error" class="text-rose-500 font-medium hidden">Msg</small>
                 </div>
 

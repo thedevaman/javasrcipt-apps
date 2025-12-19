@@ -1,5 +1,6 @@
 const createuser = (e) => {
 e.preventDefault()
+const form = e.target
 validation("fullname","fullname-error")
 validation("email","email-error")
 validation("password","password-error")
@@ -12,8 +13,13 @@ const payload =JSON.stringify({
   password:password, //password
 
 })
-const key = Date.now()
+const key = email
 localStorage.setItem(key,payload)
+form.reset()
+swal({
+  icon:'success',
+  title:'Signup success'
+})
 
 
 }
@@ -32,4 +38,21 @@ if(value.length == 0)
   lable.innerHTML = `${input.name} *is required`
 }
 
+}
+
+
+
+const togglePassword = ()=>{
+
+const inputPassword = document.getElementById('password')
+const type =  inputPassword.type
+const password_icon = document.getElementById('password-icon')
+if(type === "password")
+{
+  inputPassword.type = 'text'
+  password_icon.className = "ri-eye-off-line"
+}else{
+  inputPassword.type = "password"
+  password_icon.className = "ri-eye-line"
+}
 }
