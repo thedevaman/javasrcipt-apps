@@ -8,6 +8,8 @@
     href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
     rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/cropperjs@1.5.13/dist/cropper.min.css">
+    <script src="https://unpkg.com/cropperjs@1.5.13/dist/cropper.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -24,9 +26,13 @@
                 Choose Image
                 <input onchange="uploadImage()" id="file-input" type="file" accept="images/*" class="opacity-0 w-full h-full absolute top-0 left-0"/>
             </button>
-             <button class="w-full bg-green-500 text-white font-medium py-2 px-6 rounded hover:bg-green-600 mt-6">
+             <button onclick="downloadImg()" id="download-btn" class="hidden w-full bg-green-500 text-white font-medium py-2 px-6 rounded hover:bg-green-600 mt-6">
                 <i class="ri-arrow-down-line"></i>
                 Download
+            </button>
+             <button onclick="loadCropper()" class="w-full bg-violet-500 text-white font-medium py-2 px-6 rounded hover:bg-violet-600 mt-6">
+                <i class="ri-crop-line"></i>
+                Crop
             </button>
             <button onclick="logout()" class="w-full bg-blue-500 text-white font-medium py-2 px-6 rounded hover:bg-blue-600 mt-6">
                 <i class="ri-logout-circle-r-line"></i>
@@ -35,8 +41,8 @@
             
         </div>
       </div>
-      <div class="bg-white rounded-2xl p-12 flex-1">
-       <img id="picture" src="images/nature.webp"/>
+      <div class="bg-white rounded-2xl p-12 flex-1 flex justify-center">
+       <img id="picture" src="images/nature.webp" class="w-[80%]"/>
       </div>
     </div>    
     </div>
