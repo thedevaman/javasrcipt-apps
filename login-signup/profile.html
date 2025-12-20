@@ -19,17 +19,27 @@
         <div class="mt-20 text-center">
             <h1 class="text-xl font-medium">Aman</h1>
             <p class="text-gray-600">aman@gmail.com</p>
-            <button class="bg-blue-500 text-white font-medium py-2 px-6 rounded hover:bg-blue-600 mt-6">
+             <button class="relative w-full bg-red-500 text-white font-medium py-2 px-6 rounded hover:bg-red-600 mt-6">
+                <i class="ri-upload-line"></i>
+                Choose Image
+                <input onchange="uploadImage()" id="file-input" type="file" accept="images/*" class="opacity-0 w-full h-full absolute top-0 left-0"/>
+            </button>
+             <button class="w-full bg-green-500 text-white font-medium py-2 px-6 rounded hover:bg-green-600 mt-6">
+                <i class="ri-arrow-down-line"></i>
+                Download
+            </button>
+            <button onclick="logout()" class="w-full bg-blue-500 text-white font-medium py-2 px-6 rounded hover:bg-blue-600 mt-6">
                 <i class="ri-logout-circle-r-line"></i>
                 Logout
             </button>
+            
         </div>
       </div>
       <div class="bg-white rounded-2xl p-12 flex-1">
-
+       <img id="picture" src="images/nature.webp"/>
       </div>
     </div>    
     </div>
-    
+    <script src="js/profile.js"></script>
 </body>
 </html>

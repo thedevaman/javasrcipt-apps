@@ -1,3 +1,13 @@
+window.onload =()=>{
+
+  const user = localStorage.getItem('isLogin')
+  if(user)
+  {
+    location.replace('profile.html')
+  }
+
+}
+
 const createuser = (e) => {
 e.preventDefault()
 const form = e.target
