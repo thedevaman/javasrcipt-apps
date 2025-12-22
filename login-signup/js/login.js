@@ -1,6 +1,6 @@
 window.onload =()=>{
 
-  const user = localStorage.getItem('isLogin')
+  const user = localStorage.getItem('session')
   if(user)
   {
     location.replace('profile.html')
@@ -25,7 +25,7 @@ const login = (e)=>{
    const data = JSON.parse(user)
    if(data.password === password)
    {
-    localStorage.setItem('isLogin',true)
+    localStorage.setItem('session',user)
     location.replace('profile.html');
    }else{
      passwordError.classList.remove('hidden')

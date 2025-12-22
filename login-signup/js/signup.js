@@ -1,6 +1,6 @@
 window.onload =()=>{
 
-  const user = localStorage.getItem('isLogin')
+  const user = localStorage.getItem('session')
   if(user)
   {
     location.replace('profile.html')
