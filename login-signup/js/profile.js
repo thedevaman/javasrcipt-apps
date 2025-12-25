@@ -5,7 +5,6 @@ const user = localStorage.getItem('session')
 if(!user)
 {
    location.replace('login.html')
-
 }
 
 showUserinfo()
@@ -64,18 +63,34 @@ const downloadImg = () =>{
 const showUserinfo  = ()=>{
 
    const session = localStorage.getItem('session')
+   const prifile_picture = localStorage.getItem('prifile-picture')
    const user = JSON.parse(session)
    const user_name = document.getElementById('user-name')
    const user_email = document.getElementById('user-email')
    user_email.innerHTML = user.email
    user_name.innerHTML = user.fullname
+   if(prifile_picture)
+   {
+      const profile_pic = document.getElementById('profile-pic')
+      profile_pic.src = prifile_picture
+   }
+
 
 }
 
 const uploadProfileImg = () =>{
    const input = document.getElementById('profile-pic-input')
    const file = input.files[0]
-   const url = URL.createObjectURL(file)
+   // const url = URL.createObjectURL(file)
    const profile_pic = document.getElementById('profile-pic')
-   profile_pic.src = url
+   // profile_pic.src = url
+
+   const fileReader = new FileReader()
+   fileReader.readAsDataURL(file)
+   fileReader.onload = (e)=>{
+    const fileString = e.target.result
+    profile_pic.src = fileString
+    localStorage.setItem('prifile-picture',fileString)
+   //  console.log(fileString)
+   }
 }
