@@ -10,9 +10,20 @@
 // },5000)
 
 
-setInterval(()=>{
-    const dateTime = new Date()
-    const time = dateTime.toLocaleTimeString()
-    const timer = document.getElementById('timer')
-    timer.innerHTML = time
-},1000)
+// setInterval(()=>{
+//     const dateTime = new Date()
+//     const time = dateTime.toLocaleTimeString()
+//     const timer = document.getElementById('timer')
+//     timer.innerHTML = time
+// },1000)
+
+
+const download = ()=>{
+
+    const a = document.createElement('a')
+    a.href = "images/ads.png"
+    a.download = "ads.png"
+    a.click()
+    a.remove()
+
+}
