@@ -1,10 +1,18 @@
 
 // settimeout used for delay (its run after given time only once)
-setTimeout(()=>{
+// setTimeout(()=>{
 
-     Swal.fire({
-        html:`<img src="images/ads.png" alt="ads" width="100%"/>`,
-        showConfirmButton: false
-    })
+//      Swal.fire({
+//         html:`<img src="images/ads.png" alt="ads" width="100%"/>`,
+//         showConfirmButton: false
+//     })
 
-},5000)
+// },5000)
+
+
+setInterval(()=>{
+    const dateTime = new Date()
+    const time = dateTime.toLocaleTimeString()
+    const timer = document.getElementById('timer')
+    timer.innerHTML = time
+},1000)
