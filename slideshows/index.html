@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+     <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+    rel="stylesheet"
+   />
+   <style>
+    #preview{
+     background: url(images/1.jpg); 
+     background-size: cover;
+     transition: 1s;
+    }
+   </style>
+</head>
+<body>
+    <div id="preview" class="overflow-hidden relative w-full h-[500px] bg-red-500">
+      <button onclick="prev()" class="hover:shadow-lg hover:scale-120 transition duration-300  bg-white w-12 h-16 rounded-r text-black text-2xl absolute top-1/2 transform -translate-y-1/2 left-0">
+        <i class="ri-arrow-drop-left-line"></i>
+      </button>
+      <button onclick="next()" class="hover:shadow-lg hover:scale-120 transition duration-300  bg-white w-12 h-16 rounded-l text-black text-2xl absolute top-1/2 transform -translate-y-1/2 right-0">
+        <i class="ri-arrow-drop-right-line"></i>
+      </button>
+
+      <div id="counter" class="border bprder-gray-300  bg-white w-[100px] py-1 absolute bottom-3 left-1/2 transform -translate-x-1/2 rounded-full shadow-lg text-center font-medium">
+       
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
