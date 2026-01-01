@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+     <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+    rel="stylesheet"
+   />
+   
+</head>
+<body>
+    <div class="p-16">
+        <button onclick="toggleDrawer()" class="bg-indigo-500 px-8 py-2.5 rounded text-white font-medium hover:bg-indigo-600">
+            <i class="ri-arrow-right-line"></i>
+            Toggle Drawer</button>
+    </div>
+    <aside style="width: 0px;transition: 0.3s;"  id="drawer" class="fixed top-0 right-0 shadow-xl h-full border-l border-l-gray-200">
+        <div class="flex items-center justify-between px-6 py-3 border-b border-b-gray-200">
+            <h1 class="font-semibold text-xl">Register Now</h1>
+            <i onclick="toggleDrawer()" class="ri-close-circle-line text-gray-500"></i>
+        </div>
+        <div class="p-8">
+            <p class="text-gray-500">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo expedita quisquam, illum qui provident cum reiciendis modi hic praesentium fugit sequi, vero accusantium accusamus corporis vel sunt similique temporibus amet!
+            </p>
+        </div>
+    </aside>
+    <script src="js/script.js"></script>
+</body>
+</html>
