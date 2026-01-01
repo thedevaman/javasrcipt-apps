@@ -16,7 +16,7 @@ const prev = () =>{
 if(move >= size)
 {
 move = move-size
-slider.style.marginLeft = `${move}px`
+slider.style.marginLeft = `-${move}px`
 }
    
 }
